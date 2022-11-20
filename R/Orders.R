@@ -577,7 +577,7 @@ order_check <- function(..., ovar = get0("ovar", mode = "environment", envir = r
         }
       } 
     }
-    if (isTRUE(extended_hours) && (type != "limit" | order_class %in% c("oco","oto", "bracket"))) rlang::abort(paste0("Extended hours only supports simple 'limit' orders and `time_in_force = 'day'`"))
+    if (isTRUE(extended_hours) && (type != "limit")) rlang::abort(paste0("Extended hours only supports simple 'limit' orders and `time_in_force = 'day'`"))
   } else if (action == "c") {
     if (is.null(symbol_id)) rlang::abort("`symbol_id` is NULL, the order may not have been placed successfully?")
   } 
