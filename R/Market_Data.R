@@ -110,8 +110,7 @@ market_data <- function(symbol, v = 2, timeframe = "day", multiplier = 1, from =
   )
   
   evar$tqs <- c("lt", "tr", "lq", "qu", "ss")
-  evar$is_tqs <- ifelse(timeframe %in% c('tr', "qu"),TRUE,FALSE)
-  #evar$is_tqs <- FALSE
+  evar$is_tqs <- FALSE
   adjustment <- match_letters(adjustment, c('raw', "split", "dividend", "all"))
   
   # Process & Bind important variables:  Thu Mar 26 08:40:24 2020 ----
